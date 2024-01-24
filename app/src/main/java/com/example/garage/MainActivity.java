@@ -83,9 +83,13 @@ public class MainActivity extends AppCompatActivity {
         if (this.claims != null) {
             String given_name = (String) this.claims.get("given_name");
             String family_name = (String) this.claims.get("family_name");
-            //todo check null values
-            if(given_name != null && family_name != null) {
-                this.fullName = given_name + " " + family_name;
+
+            if(given_name != null) {
+                this.fullName += given_name;
+            }
+
+            if(family_name != null) {
+                this.fullName += " " + family_name;
             }
         }
     }
